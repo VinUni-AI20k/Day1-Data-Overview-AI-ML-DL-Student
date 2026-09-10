@@ -1,9 +1,10 @@
 # Bài thực hành Ngày 1 – Đọc nhãn từ đầu ra YOLO11
 
-[![Mở bằng Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/VinUni-AI20k/Day1-Data-Overview-AI-ML-DL-Student/blob/main/notebooks/day1_understand_labels.ipynb)
+[![Mở bằng Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/VinUni-AI20k/Day1-Data-Overview-AI-ML-DL-Student/blob/v1.0.0/notebooks/day1_understand_labels.ipynb)
 
 > **Trạng thái:** bản phát hành cho lớp; đánh giá formative. Làm bài bằng ảnh công khai có sẵn, không
 > đưa họ tên, MSSV hoặc dữ liệu cá nhân vào repository.
+> **Phiên bản lớp:** `v1.0.0`; chỉ đổi release giữa khóa khi GV/Lab Lead thông báo chính thức.
 
 Đây là bài thực hành 60 phút về cách đọc **prediction** của một mô hình đã huấn luyện và suy ra loại
 **ground truth** mà một quy trình gán nhãn cần tạo. Bạn không huấn luyện mô hình và không coi prediction
