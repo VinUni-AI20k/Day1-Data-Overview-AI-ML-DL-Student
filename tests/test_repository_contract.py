@@ -103,6 +103,13 @@ class RepositoryContractTest(unittest.TestCase):
             r'REPORT_TEMPLATE_ASSET = \{\s*"url": "https://raw\.githubusercontent\.com/'
             r'[^\"]+/[0-9a-f]{7,40}/reports/REPORT_TEMPLATE\.md"',
         )
+        self.assertIn(
+            "https://raw.githubusercontent.com/VinUni-AI20k/"
+            "Day1-Data-Overview-AI-ML-DL-Student/"
+            "60ecb51ba58f90faa1da6982e29bd2efbb301c97/"
+            "reports/REPORT_TEMPLATE.md",
+            self.code_source,
+        )
         self.assertIn("if not REPORT_PATH.exists()", self.code_source)
         self.assertIn("Giữ nguyên REPORT.md hiện có", self.code_source)
         self.assertIn('target.with_name(f".{target.name}.download")', self.code_source)
