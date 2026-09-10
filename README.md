@@ -1,10 +1,10 @@
 # Bài thực hành Ngày 1 – Đọc nhãn từ đầu ra YOLO11
 
-[![Mở bằng Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/VinUni-AI20k/Day1-Data-Overview-AI-ML-DL-Student/blob/v1.0.1/notebooks/day1_understand_labels.ipynb)
+[![Mở bằng Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/VinUni-AI20k/Day1-Data-Overview-AI-ML-DL-Student/blob/v1.0.2/notebooks/day1_understand_labels.ipynb)
 
 > **Trạng thái:** bản phát hành cho lớp; đánh giá formative. Tên repository dùng họ tên và MSSV để Lab
 > Coach đối chiếu bài nộp; không ghi thêm dữ liệu cá nhân vào báo cáo hoặc output.
-> **Phiên bản lớp:** `v1.0.1`; chỉ đổi release giữa khóa khi GV/Lab Lead thông báo chính thức.
+> **Phiên bản lớp:** `v1.0.2`; chỉ đổi release giữa khóa khi GV/Lab Lead thông báo chính thức.
 
 Đây là bài thực hành 60 phút về cách đọc **prediction** của một mô hình đã huấn luyện và suy ra loại
 **ground truth** mà một quy trình gán nhãn cần tạo. Bạn không huấn luyện mô hình và không coi prediction
@@ -60,7 +60,7 @@ Bạn chưa cần cài Python, VS Code, Antigravity hoặc CVAT cho bài này. T
 - [ ] Mở được repository do GV/Lab Coach cung cấp và nhìn thấy nút **Use this template**.
 - [ ] Không sử dụng ảnh cá nhân hoặc dữ liệu nội bộ; notebook đã có sẵn ảnh công khai cho bài lab.
 - [ ] Biết kênh hỏi hỗ trợ và kênh nộp link repository của lớp.
-- [ ] Biết tên repository bắt buộc theo mẫu `KX-DAY01-HoVaTen-MSSV`; không thêm email, số điện thoại
+- [ ] Biết tên repository bắt buộc theo mẫu `<KHOA>-DAY01-HoVaTen-MSSV`; không thêm email, số điện thoại
   hoặc dữ liệu cá nhân khác.
 
 Nếu thiếu tài khoản hoặc không mở được repository, báo Lab Coach trước khi chạy bài.
@@ -70,9 +70,10 @@ Nếu thiếu tài khoản hoặc không mở được repository, báo Lab Coac
 ### Bước 1 — Tạo repository bài làm từ template
 
 Mở repository bằng link do GV/Lab Coach cung cấp, nhấn **Use this template → Create a new repository**.
-Chọn tài khoản GitHub của bạn làm owner, đặt tên theo mẫu `KX-DAY01-HoVaTen-MSSV` và chọn **Public** để
-Lab Coach mở được link nộp. Chỉ lấy branch mặc định `main`. Nếu đã tạo repository cho bài này thì dùng lại
-bản đó, không tạo thêm bản sao.
+Chọn tài khoản GitHub của bạn làm owner, đặt tên theo mẫu `<KHOA>-DAY01-HoVaTen-MSSV` và chọn **Public** để
+Lab Coach mở được link nộp. Thay `<KHOA>` bằng mã khóa của bạn, ví dụ
+`K4-DAY01-NguyenVanAn-12345678`. Chỉ lấy branch mặc định `main`. Nếu đã tạo repository cho bài này thì dùng
+lại bản đó, không tạo thêm bản sao.
 
 ![Repository chính thức với nhãn Public template](docs/screenshots/01-use-template-repository.png)
 
@@ -105,14 +106,14 @@ Trong panel **Files** bên trái Colab, mở các tệp JSON và PNG trong `day1
 ### Bước 5 — Tạo một ZIP trong Google Drive
 
 Ở ô cuối, thay `KHOA` bằng mã khóa rồi chạy ô. Chọn tài khoản Google và cho phép notebook kết nối Drive.
-Chỉ tải tệp `KX-DAY01-report.zip` đã tạo trong
+Chỉ tải tệp `<KHOA>-DAY01-report.zip` đã tạo trong
 `MyDrive/AI20K-Day1/`; không cần tải riêng từng JSON hoặc PNG.
 
 ### Bước 6 — Đưa bài vào `report/` của repository
 
 Giải nén ZIP trên máy. Trong repository tạo từ template, thư mục `report/` phải nhận trực tiếp hai mục
 `REPORT.md` và `day1_lab_outputs/`; không đưa nguyên ZIP và không giữ thêm thư mục bọc
-`KX-DAY01-.../`.
+`<KHOA>-DAY01-.../`.
 
 - **Windows:** nhấp phải ZIP → **Extract All…** → mở thư mục vừa giải nén.
 - **macOS:** nhấp đúp ZIP trong Finder → mở thư mục cùng tên vừa tạo.
@@ -150,7 +151,7 @@ Sau khi bạn cho phép truy cập, notebook gom `REPORT.md` và toàn bộ `day
 trúc ZIP, rồi lưu vào:
 
 ```text
-MyDrive/AI20K-Day1/KX-DAY01-report.zip
+MyDrive/AI20K-Day1/<KHOA>-DAY01-report.zip
 ```
 
 Tải **một tệp ZIP này** từ Google Drive và giải nén. ZIP chứa trực tiếp hai mục sau, không có thêm thư mục
@@ -166,13 +167,13 @@ từng JSON/PNG từ panel Files của Colab.
 
 ## Cấu trúc bài nộp
 
-Tên repository dùng mẫu `KX-DAY01-HoVaTen-MSSV`; tên ZIP dùng `KX-DAY01-report`; thư mục nhận bài luôn là
-`report/`. Họ tên và MSSV chỉ xuất hiện trong tên repository để đối chiếu với tài khoản VLearn. Không ghi
-chúng vào `REPORT.md`, JSON, PNG, attribution hoặc ZIP và không thêm email, số điện thoại hay dữ liệu cá
-nhân khác.
+Tên repository dùng mẫu `<KHOA>-DAY01-HoVaTen-MSSV`; tên ZIP dùng `<KHOA>-DAY01-report.zip`; thư mục nhận
+bài luôn là `report/`. Họ tên và MSSV chỉ xuất hiện trong tên repository để đối chiếu với tài khoản VLearn.
+Không ghi chúng vào `REPORT.md`, JSON, PNG, attribution hoặc ZIP và không thêm email, số điện thoại hay dữ
+liệu cá nhân khác.
 
 ```text
-KX-DAY01-HoVaTen-MSSV/
+<KHOA>-DAY01-HoVaTen-MSSV/
 └── report/
     ├── REPORT.md
     └── day1_lab_outputs/
@@ -186,7 +187,8 @@ KX-DAY01-HoVaTen-MSSV/
             └── segmentation_prediction.png
 ```
 
-Ví dụ ZIP: `K4-DAY01-report.zip`. Sau khi giải nén, `report/` phải có cấu trúc như trên.
+Ví dụ repository: `K4-DAY01-NguyenVanAn-12345678`. Ví dụ ZIP: `K4-DAY01-report.zip`. Sau khi giải nén,
+`report/` phải có cấu trúc như trên.
 Nếu VLearn quy định khóa/prefix hoặc kênh nộp khác, ưu tiên yêu cầu chính thức.
 
 Lệnh Git tối thiểu sau khi đã chép đúng nội dung:

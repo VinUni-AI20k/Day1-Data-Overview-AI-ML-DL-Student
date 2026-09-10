@@ -106,7 +106,7 @@ class RepositoryContractTest(unittest.TestCase):
         self.assertIn(
             "https://raw.githubusercontent.com/VinUni-AI20k/"
             "Day1-Data-Overview-AI-ML-DL-Student/"
-            "60ecb51ba58f90faa1da6982e29bd2efbb301c97/"
+            "372b90e8e867530e559eed0424d4a594ec74163c/"
             "reports/REPORT_TEMPLATE.md",
             self.code_source,
         )
@@ -127,10 +127,10 @@ class RepositoryContractTest(unittest.TestCase):
     def test_submission_contract_keeps_identity_out_of_artifacts(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         report = (ROOT / "reports" / "REPORT_TEMPLATE.md").read_text(encoding="utf-8")
-        self.assertIn("KX-DAY01-HoVaTen-MSSV", readme)
+        self.assertIn("<KHOA>-DAY01-HoVaTen-MSSV", readme)
         self.assertIn("Họ tên và MSSV chỉ xuất hiện trong tên repository", readme)
         for document in (readme, report):
-            self.assertIn("KX-DAY01-report.zip", document)
+            self.assertIn("<KHOA>-DAY01-report.zip", document)
             self.assertNotIn("**Họ và tên:**", document)
             self.assertNotIn("**MSSV:**", document)
         self.assertNotIn("HO_VA_TEN_KHONG_DAU", self.code_source)
@@ -319,7 +319,7 @@ class RepositoryContractTest(unittest.TestCase):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         expected = (
             "colab.research.google.com/github/VinUni-AI20k/Day1-Data-Overview-AI-ML-DL-Student/"
-            "blob/v1.0.1/notebooks/day1_understand_labels.ipynb"
+            "blob/v1.0.2/notebooks/day1_understand_labels.ipynb"
         )
         self.assertIn(expected, readme)
         self.assertIn("Phiên bản lớp", readme)
