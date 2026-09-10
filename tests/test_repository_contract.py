@@ -124,9 +124,11 @@ class RepositoryContractTest(unittest.TestCase):
     def test_setup_clears_stale_output(self):
         self.assertIn("shutil.rmtree(OUTPUT_DIR)", self.code_source)
 
-    def test_submission_contract_is_pii_free(self):
+    def test_submission_contract_keeps_identity_out_of_artifacts(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         report = (ROOT / "reports" / "REPORT_TEMPLATE.md").read_text(encoding="utf-8")
+        self.assertIn("KX-DAY01-HoVaTen-MSSV", readme)
+        self.assertIn("Họ tên và MSSV chỉ xuất hiện trong tên repository", readme)
         for document in (readme, report):
             self.assertIn("KX-DAY01-report.zip", document)
             self.assertNotIn("**Họ và tên:**", document)
@@ -317,7 +319,7 @@ class RepositoryContractTest(unittest.TestCase):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         expected = (
             "colab.research.google.com/github/VinUni-AI20k/Day1-Data-Overview-AI-ML-DL-Student/"
-            "blob/v1.0.0/notebooks/day1_understand_labels.ipynb"
+            "blob/v1.0.1/notebooks/day1_understand_labels.ipynb"
         )
         self.assertIn(expected, readme)
         self.assertIn("Phiên bản lớp", readme)

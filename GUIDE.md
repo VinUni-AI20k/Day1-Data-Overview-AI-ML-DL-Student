@@ -11,7 +11,7 @@ Preflight:
 
 - [ ] Đã mở notebook từ repository nguồn bằng Colab.
 - [ ] Biết cách mở và sửa `REPORT.md` mà notebook tạo sẵn trong panel Files của Colab.
-- [ ] Không đưa ảnh hoặc dữ liệu nhạy cảm vào Colab/repository công khai.
+- [ ] Không đưa ảnh hoặc dữ liệu nhạy cảm vào Colab; tên repository chỉ chứa họ tên và MSSV bắt buộc.
 - [ ] Có quyền lưu tệp vào Google Drive dùng để nộp bài.
 - [ ] Đã tạo repository bài làm từ template và biết thư mục nộp bài là `report/`.
 - [ ] Biết cách giải nén ZIP bằng File Explorer (Windows), Finder (macOS) hoặc Archive Manager (Ubuntu).
@@ -115,6 +115,6 @@ quy tắc bảo vệ dữ liệu.
 - [ ] Không coi confidence/model score là điểm chất lượng nhãn.
 - [ ] Nêu ít nhất một lỗi hoặc điểm mơ hồ thực sự quan sát được.
 - [ ] Ghi lại mọi thay đổi về code, checkpoint, threshold và môi trường.
-- [ ] Có `IMAGE_ATTRIBUTION.md` trong output và không có họ tên, MSSV hoặc dữ liệu nhạy cảm.
+- [ ] Có `IMAGE_ATTRIBUTION.md` trong output; họ tên/MSSV chỉ nằm ở tên repository, không nằm trong output.
 - [ ] ZIP trong `MyDrive/AI20K-Day1/` mở ra thấy trực tiếp `REPORT.md` và `day1_lab_outputs/`.
 - [ ] Hai mục đó nằm trong `report/`; đã commit, push và nộp link repository trên VLearn.

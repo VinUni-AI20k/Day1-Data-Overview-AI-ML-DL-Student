@@ -1,10 +1,10 @@
 # Bài thực hành Ngày 1 – Đọc nhãn từ đầu ra YOLO11
 
-[![Mở bằng Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/VinUni-AI20k/Day1-Data-Overview-AI-ML-DL-Student/blob/v1.0.0/notebooks/day1_understand_labels.ipynb)
+[![Mở bằng Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/VinUni-AI20k/Day1-Data-Overview-AI-ML-DL-Student/blob/v1.0.1/notebooks/day1_understand_labels.ipynb)
 
-> **Trạng thái:** bản phát hành cho lớp; đánh giá formative. Làm bài bằng ảnh công khai có sẵn, không
-> đưa họ tên, MSSV hoặc dữ liệu cá nhân vào repository.
-> **Phiên bản lớp:** `v1.0.0`; chỉ đổi release giữa khóa khi GV/Lab Lead thông báo chính thức.
+> **Trạng thái:** bản phát hành cho lớp; đánh giá formative. Tên repository dùng họ tên và MSSV để Lab
+> Coach đối chiếu bài nộp; không ghi thêm dữ liệu cá nhân vào báo cáo hoặc output.
+> **Phiên bản lớp:** `v1.0.1`; chỉ đổi release giữa khóa khi GV/Lab Lead thông báo chính thức.
 
 Đây là bài thực hành 60 phút về cách đọc **prediction** của một mô hình đã huấn luyện và suy ra loại
 **ground truth** mà một quy trình gán nhãn cần tạo. Bạn không huấn luyện mô hình và không coi prediction
@@ -56,11 +56,12 @@ Bạn chưa cần cài Python, VS Code, Antigravity hoặc CVAT cho bài này. T
 
 - [ ] Đăng nhập được tài khoản GitHub và tài khoản Google dùng cho Colab/Drive.
 - [ ] Dùng Chrome hoặc Edge phiên bản mới và có kết nối Internet ổn định.
-- [ ] Biết mã khóa (`KHOA`, ví dụ `K4`) để notebook đặt tên ZIP.
+- [ ] Biết mã khóa (`KHOA`, ví dụ `K4`), họ tên không dấu và MSSV để đặt tên repository bài làm.
 - [ ] Mở được repository do GV/Lab Coach cung cấp và nhìn thấy nút **Use this template**.
 - [ ] Không sử dụng ảnh cá nhân hoặc dữ liệu nội bộ; notebook đã có sẵn ảnh công khai cho bài lab.
 - [ ] Biết kênh hỏi hỗ trợ và kênh nộp link repository của lớp.
-- [ ] Biết VLearn sẽ gắn link nộp bài với tài khoản học viên; không ghi họ tên/MSSV vào repo.
+- [ ] Biết tên repository bắt buộc theo mẫu `KX-DAY01-HoVaTen-MSSV`; không thêm email, số điện thoại
+  hoặc dữ liệu cá nhân khác.
 
 Nếu thiếu tài khoản hoặc không mở được repository, báo Lab Coach trước khi chạy bài.
 
@@ -69,9 +70,9 @@ Nếu thiếu tài khoản hoặc không mở được repository, báo Lab Coac
 ### Bước 1 — Tạo repository bài làm từ template
 
 Mở repository bằng link do GV/Lab Coach cung cấp, nhấn **Use this template → Create a new repository**.
-Chọn tài khoản GitHub của bạn làm owner, đặt tên repository theo hướng dẫn trên VLearn và chọn visibility
-theo yêu cầu của lớp. Chỉ lấy branch mặc định `main`. Nếu đã tạo repository cho bài này thì dùng lại bản
-đó, không tạo thêm bản sao.
+Chọn tài khoản GitHub của bạn làm owner, đặt tên theo mẫu `KX-DAY01-HoVaTen-MSSV` và chọn **Public** để
+Lab Coach mở được link nộp. Chỉ lấy branch mặc định `main`. Nếu đã tạo repository cho bài này thì dùng lại
+bản đó, không tạo thêm bản sao.
 
 ![Repository chính thức với nhãn Public template](docs/screenshots/01-use-template-repository.png)
 
@@ -129,7 +130,8 @@ Chọn một trong hai cách:
 - **Git — nếu đã quen VS Code/terminal:** chạy ba lệnh ở phần [Cấu trúc bài nộp](#cấu-trúc-bài-nộp).
 
 Cuối cùng, tải lại trang GitHub, mở `report/` để kiểm tra đủ file rồi nộp **link repository bài làm** trên
-VLearn. VLearn dùng tài khoản đăng nhập để xác định người nộp; không thêm họ tên/MSSV vào repo hoặc tên ZIP.
+VLearn. Lab Coach đối chiếu tài khoản VLearn với `HoVaTen-MSSV` trong tên repository. Không thêm họ tên,
+MSSV vào tên ZIP, `REPORT.md` hoặc output.
 
 Colab miễn phí không bảo đảm GPU hoặc giới hạn tài nguyên cố định. Bản lab dùng biến thể `n` để giảm thời
 gian tải/chạy trong lớp; cả ba tác vụ và cấu trúc prediction cần học vẫn giữ nguyên. Không tự đổi checkpoint,
@@ -164,12 +166,13 @@ từng JSON/PNG từ panel Files của Colab.
 
 ## Cấu trúc bài nộp
 
-Tên ZIP dùng mẫu `KX-DAY01-report`; thư mục nhận bài trong repo luôn là `report/`. Không ghi họ tên, MSSV,
-email, số điện thoại hoặc dữ liệu cá nhân khác trong repository. Danh tính người nộp được quản lý bằng tài
-khoản VLearn nhận link bài làm.
+Tên repository dùng mẫu `KX-DAY01-HoVaTen-MSSV`; tên ZIP dùng `KX-DAY01-report`; thư mục nhận bài luôn là
+`report/`. Họ tên và MSSV chỉ xuất hiện trong tên repository để đối chiếu với tài khoản VLearn. Không ghi
+chúng vào `REPORT.md`, JSON, PNG, attribution hoặc ZIP và không thêm email, số điện thoại hay dữ liệu cá
+nhân khác.
 
 ```text
-<repo-bai-lam>/
+KX-DAY01-HoVaTen-MSSV/
 └── report/
     ├── REPORT.md
     └── day1_lab_outputs/
@@ -209,7 +212,7 @@ git push
 | GitHub chỉ có file ZIP, không thấy các file báo cáo | Xóa ZIP khỏi thay đổi chưa commit, giải nén rồi đưa trực tiếp `REPORT.md` và `day1_lab_outputs/` vào `report/`. |
 | Không upload được thư mục qua GitHub Web | Mở đúng `report/`, kéo thả cả thư mục vào vùng upload. Nếu trình duyệt vẫn chặn, dùng Git hoặc nhờ Lab Coach hỗ trợ. |
 | `git push` bị từ chối quyền | Kiểm tra remote đang trỏ tới repository tạo từ template thuộc tài khoản của bạn; đăng nhập lại GitHub nếu cần. |
-| Lỡ đưa dữ liệu cá nhân vào repository | Dừng nộp bài và báo ngay GV/Lab Coach để được hướng dẫn xử lý; không tiếp tục chia sẻ link. |
+| Lỡ đưa dữ liệu cá nhân vào báo cáo/output | Giữ định danh bắt buộc ở tên repository, xóa dữ liệu cá nhân khỏi `REPORT.md` và output trước khi nộp link; nếu đã push, báo GV/Lab Coach. |
 
 Nếu lỗi không có trong bảng, chụp màn hình **toàn bộ thông báo lỗi**, ghi rõ bước đang làm và gửi cho Lab
 Coach. Không gửi password, token GitHub hoặc mã xác thực Google.
