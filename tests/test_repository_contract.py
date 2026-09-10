@@ -325,8 +325,15 @@ class RepositoryContractTest(unittest.TestCase):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         guide = (ROOT / "GUIDE.md").read_text(encoding="utf-8")
         self.assertIn("Use this template", readme)
+        self.assertIn("Public template", readme)
         self.assertIn("tạo repository bài làm từ template", guide)
         self.assertNotIn("Fork repository", readme)
+        self.assertTrue(
+            (ROOT / "docs" / "screenshots" / "01-use-template-repository.png").is_file()
+        )
+        self.assertFalse(
+            (ROOT / "docs" / "screenshots" / "01-fork-repository.png").exists()
+        )
 
     def test_primary_student_flow_is_cross_platform_and_browser_only(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")

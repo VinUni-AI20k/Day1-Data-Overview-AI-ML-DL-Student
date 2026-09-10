@@ -72,8 +72,10 @@ Chọn tài khoản GitHub của bạn làm owner, đặt tên repository theo h
 theo yêu cầu của lớp. Chỉ lấy branch mặc định `main`. Nếu đã tạo repository cho bài này thì dùng lại bản
 đó, không tạo thêm bản sao.
 
-![Vị trí nút Use this template của bài lab](docs/screenshots/01-use-template-repository.png)
+![Repository chính thức với nhãn Public template](docs/screenshots/01-use-template-repository.png)
 
+> Xác nhận đúng tên `VinUni-AI20k/Day1-Data-Overview-AI-ML-DL-Student` và nhãn **Public template** như
+> ảnh. Sau khi đăng nhập GitHub, nút **Use this template** nằm ở góc trên bên phải, cạnh Fork/Star.
 > Repository tạo từ template có lịch sử độc lập và thư mục `report/` sẵn sàng nhận bài. Không chọn
 > **Include all branches**.
 
