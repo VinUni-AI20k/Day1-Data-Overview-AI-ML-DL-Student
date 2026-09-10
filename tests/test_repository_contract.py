@@ -313,13 +313,14 @@ class RepositoryContractTest(unittest.TestCase):
         self.assertIn("Image.open(path)", self.code_source)
         self.assertIn("expected_samples", self.code_source)
 
-    def test_colab_badge_opens_student_main_branch(self):
+    def test_colab_badge_opens_frozen_student_release(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         expected = (
             "colab.research.google.com/github/VinUni-AI20k/Day1-Data-Overview-AI-ML-DL-Student/"
-            "blob/main/notebooks/day1_understand_labels.ipynb"
+            "blob/v1.0.0/notebooks/day1_understand_labels.ipynb"
         )
         self.assertIn(expected, readme)
+        self.assertIn("Phiên bản lớp", readme)
 
     def test_student_repository_is_documented_as_a_template(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
